@@ -1,6 +1,7 @@
 # CCCS541 assignment 1 REST Plain TEXT
 
 ## API COMMANDS
+> **Note**: Date gets updated & created inside the script
 
 ### @LIST 
 `curl 'http://localhost:8088/Assignment/webresources/rest/list'`
