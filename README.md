@@ -10,10 +10,12 @@
 `curl -Uri 'http://localhost:8088/Assignment/webresources/rest/post' -Method Post -ContentType 'text/plain' -Body 'ID,Title,Description,0.0,Genre,0000'`
 
 ### @PUT 
-`curl -Uri 'http://localhost:8088/Assignment/webresources/rest/put ID=123&newID=newImdbId&newTitle=newTitle&newDescription=newDescription&newRating=6.0&newGenre=newGenre&newYear=2023' -Method PUT`
+
+
+`curl -Method PUT http://localhost:8088/Assignment/webresources/rest/put?ID=123 -Body "newID=newImdbId&newTitle=newTitle&newDescription=newDescription&newRating=6.0&newGenre=newGenre&newYear=2023"`
 
 > &newKey=Value can also be omited. Single paramters can be changed. e.g:  
-> `curl -Uri 'http://localhost:8088/Assignment/webresources/rest/put?ID=123&newRating=777.777`
+> `curl -Method PUT http://localhost:8088/Assignment/webresources/rest/put?ID=123 -Body "newTitle=New Title&newRating=8.5"`
 
 ### @GET 
 `curl 'http://localhost:8088/Assignment/webresources/rest/get?ID=123'`
