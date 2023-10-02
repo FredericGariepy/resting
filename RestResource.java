@@ -97,23 +97,30 @@ public class RestResource {
             @QueryParam("newDescription") String newDescription,
             @QueryParam("newRating") Double newRating,
             @QueryParam("newGenre") String newGenre,
-            @QueryParam("newYear") Integer newYear) {
+            @QueryParam("newYear") Integer newYear) 
+    
+        {// start of PUT method 
         
-        if (ID != null) {
-            for (Movie movie : allMovies) {
-                if (movie.getImdbId().equals(ID)) {
-                    if(newID!=null){movie.setImdbId(newID);};
-                    if(newTitle!=null){movie.setTitle(newTitle);}
-                    if(newDescription!=null){movie.setDescription(newDescription);}
-                    if(newRating!=null){movie.setRating(newRating);}
-                    if(newGenre!=null){movie.setGenre(newGenre);}
-                    if(newYear!=null){movie.setYear(newYear);}
-                    movie.setLastModified(lastModified);
-                    return "Successfully updated Movie " + ID;
-                }
-            }
+        boolean movieFound = false;
+        for (Movie movie : allMovies){
+            
+             if (movie.getImdbId().equals(ID)) {
+                
+                if(newID!=null){movie.setImdbId(newID);};
+                if(newTitle!=null){movie.setTitle(newTitle);}
+                if(newDescription!=null){movie.setDescription(newDescription);}
+                if(newRating!=null){movie.setRating(newRating);}
+                if(newGenre!=null){movie.setGenre(newGenre);}
+                if(newYear!=null){movie.setYear(newYear);}
+                movie.setLastModified(lastModified);
+                // movie is found
+                movieFound = true;
+                //break out -- update finished
+                break;
+             }
         }
-        return "No movie found with ID " + ID;
+        if (movieFound){return "Movie ID : " + ID +" Succesfully Updated";}
+        else{return "No movie found with ID " + ID;}
     }
    
     @DELETE
