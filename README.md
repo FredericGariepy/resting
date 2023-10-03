@@ -1,7 +1,9 @@
 # CCCS541 assignment 1 REST Plain TEXT
 
 ## API COMMANDS
-> **Note**: Date gets updated & created inside the script
+> **Note**: 
+> Date gets updated & created inside the script
+> The Port is `8088` for my server but it might be default `8080` on your machine
 
 ### @LIST 
 `curl 'http://localhost:8088/Assignment/webresources/rest/list'`
